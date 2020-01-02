@@ -31,7 +31,10 @@ function benchcpu {
 	echo -e "Raspberry Pi 4\tRaspbian Buster\t63.16s"
 	echo -e "Raspberry Pi 3\tRaspbian Jessie\t119.54s"
 	echo -e "Raspberry Pi 2\tRaspbian Jessie\t191.24s"
-	echo -e "Raspberry Pi ZW\tRaspbian Stretch\t607s"
+	echo -e "Raspberry Pi ZW\tRaspb. Stretch\t607s"
+	echo -e ""
+	echo -e "OC-Results:"
+	echo -e "Raspberry Pi 4\tCPU=2147\t43.7s"
 	echo -e "\e[94m"
 	sysbench --num-threads=$threads --validate=on --test=cpu --cpu-max-prime=$mprime run | grep 'total time:\|min:\|avg:\|max:' | tr -s [:space:]
 	echo -e "\e[93m"
