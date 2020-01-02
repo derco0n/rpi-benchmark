@@ -104,7 +104,7 @@ function dddisktest {
 
 
 	echo -e "Running DD READ test...\e[94m"
-	echo -e 3 > /proc/sys/vm/drop_caches 2> /dev/zero&& sync && dd if=~/test.tmp of=/dev/null bs=1M 2>&1 | grep -v records
+	sync && dd if=~/test.tmp of=/dev/null bs=1M 2>&1 | grep -v records
 	vcgencmd measure_temp
 	rm -f ~/test.tmp
 	echo -e "\e[0m"
